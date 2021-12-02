@@ -1,0 +1,9 @@
+- Geração de Números Randômicos; (OK)
+
+- Desenhar o Campo (#); (OK)
+
+- Popular o Campo com os Números (N);
+
+- Encontrar uma linha e coluna para o número que não é repetido;
+
+- Resultado do Jogo;
