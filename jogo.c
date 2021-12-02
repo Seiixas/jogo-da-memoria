@@ -8,7 +8,7 @@
 
 int main() {
   // Aqui declaramos as variáveis que vamos utilizar no jogo
-  int numeroVerdadeiro, numerosRepetidos, linhaVerdadeiro, colunaVerdeiro, i, j;
+  int numeroVerdadeiro, numerosRepetidos, linhaVerdadeiro, colunaVerdeiro, i, j, resultado;
 
   // Alteramos a seed do rand() para gerar sempre números aleatórios baseados na data
   srand(time(NULL));
@@ -35,6 +35,17 @@ int main() {
       }
     }
     printf ("\n");
+  }
+
+  // Pedir ao usuário o resultado do jogo
+  printf ("\nDigite o número que não foi repetido: ");
+  scanf ("%d", &resultado);
+
+  // Verifica se o resultado que o usuário digitou é igual ao número verdadeiro gerado
+  if (resultado == numeroVerdadeiro) {
+    printf ("\nACERTOU!!");
+  } else {
+    printf ("\nERROU");
   }
 
   return 0;
