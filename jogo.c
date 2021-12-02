@@ -3,8 +3,8 @@
 #include <time.h>
 
 // Aqui definimos o tamanho do nosso campo em linhas e colunas
-#define LINHAS 35
-#define COLUNAS 20
+#define LINHAS 10
+#define COLUNAS 10
 
 int main() {
   // Aqui declaramos as variáveis que vamos utilizar no jogo
@@ -14,15 +14,25 @@ int main() {
   srand(time(NULL));
   
   // Nós geramos os números aleatórios para cada uma das variáveis (entre 0 e 9)
-  numeroVerdadeiro = rand() % 10;
-  numerosRepetidos = rand() % 10;
-  linhaVerdadeiro = rand() % 10;
-  colunaVerdeiro = rand() % 10;
+  linhaVerdadeiro = rand() % LINHAS;
+  colunaVerdeiro = rand() % COLUNAS;
+
+  // Sorteia o numerosRepetidos e numeroVerdeiro até que os números gerados sejam diferentes
+  do {
+    numeroVerdadeiro = rand() % 10;
+    numerosRepetidos = rand() % 10;
+  } while(numeroVerdadeiro == numerosRepetidos);
 
   // Desenhamos o nosso campo com (#)
   for(i=0;i<LINHAS;i++) {
     for(j=0;j<COLUNAS;j++) {
-      printf("# ");
+
+      // Verifica se a linha atual e a coluna atual correspondem à linha e coluna geradas randomicamento
+      if(i == linhaVerdadeiro && j == colunaVerdeiro) {
+        printf ("%d ", numeroVerdadeiro); // Imprimir o número verdadeiro
+      } else {
+        printf("%d ", numerosRepetidos); // Imprimir os números repetidos
+      }
     }
     printf ("\n");
   }
