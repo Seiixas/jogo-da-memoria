@@ -37,6 +37,9 @@ int main() {
     printf ("\n");
   }
 
+  // Esperar 3 segundos
+  system("sleep 3");
+
   // Limpa a tela
   system("clear");
 
