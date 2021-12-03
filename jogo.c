@@ -37,6 +37,9 @@ int main() {
     printf ("\n");
   }
 
+  // Limpa a tela
+  system("clear");
+
   // Pedir ao usuário o resultado do jogo
   printf ("\nDigite o número que não foi repetido: ");
   scanf ("%d", &resultado);
